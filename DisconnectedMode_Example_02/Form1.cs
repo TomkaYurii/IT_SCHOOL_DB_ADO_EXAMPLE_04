@@ -39,10 +39,10 @@ namespace DisconnectedMode_Example_02
                 da = new SqlDataAdapter(sql, conn);
                 dataGridView1.DataSource = null;
 
-                cmd = new SqlCommandBuilder(da);
-                Debug.WriteLine(cmd.GetInsertCommand().CommandText);
-                Debug.WriteLine(cmd.GetUpdateCommand().CommandText);
-                Debug.WriteLine(cmd.GetDeleteCommand().CommandText);
+                //cmd = new SqlCommandBuilder(da);
+                //Debug.WriteLine(cmd.GetInsertCommand().CommandText);
+                //Debug.WriteLine(cmd.GetUpdateCommand().CommandText);
+                //Debug.WriteLine(cmd.GetDeleteCommand().CommandText);
                 da.Fill(set, "myResult");
 
                 dataGridView1.DataSource = set.Tables["myResult"];
@@ -59,7 +59,7 @@ namespace DisconnectedMode_Example_02
 
         private void button1_Click(object sender, EventArgs e)
         {
-            da.Update(set, "mybook");
+            da.Update(set, "myResult");
         }
     }
 }
